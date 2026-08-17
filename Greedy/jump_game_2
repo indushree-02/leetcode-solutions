@@ -1,0 +1,13 @@
+class Solution:
+    def jump(self, nums: List[int]) -> int:
+      j=0
+      c=0
+      s=0
+      for i in range(len(nums)-1):
+        s=max(s,i+nums[i])
+        if i==c:
+          j+=1
+          c=s
+          if c==len(nums)-1:
+            return j
+      return j
